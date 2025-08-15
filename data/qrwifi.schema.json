@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "QR WiFi Schema",
+    "type": "object",
+    "properties": {
+        "ssid": {
+            "type": "string"
+        },
+        "password": {
+            "type": "string"
+        },
+        "icon": {
+            "type": "string",
+            "format": "uri"
+        },
+        "security": {
+            "type": "string",
+            "enum": ["WPA", "WEP", "None"]
+        }
+    },
+    "required": ["ssid", "password"],
+    "additionalProperties": false
+}

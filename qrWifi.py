@@ -7,7 +7,6 @@ from PIL import Image, ImageDraw, ImageFont
 class SecurityTypes(Enum):
     '''Tipos de seguridad para la conexión WiFi.'''
     WPA : str = "WPA"
-    WPA2 : str = "WPA2"
     WEP : str = "WEP"
     NOPASS : str = "nopass"
 
@@ -15,7 +14,7 @@ class QrWiFi:
     '''Class to represent a WiFi network and generate its QR code.'''
 
     # Constructor method
-    def __init__(self, ssid : str, password : str = '', security : str = SecurityTypes.WPA2.value):
+    def __init__(self, ssid : str, password : str = '', security : str = SecurityTypes.WPA.value):
         '''Constructor. Initializes the QrWiFi class with the provided parameters.'''
         self.ssid : str = ssid
         self.password : str = password

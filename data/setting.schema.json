@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Settings Schema",
+    "type": "object",
+    "properties": {
+        "theme": {
+            "type": "string",
+            "enum": ["light", "dark", "system"]
+        },
+        "language": {
+            "type": "string",
+            "enum": ["es"]
+        },
+        "fontSize": {
+            "type": "integer",
+            "minimum": 5,
+            "maximum": 32
+        },
+        "savePathRoute" : {
+            "type": "string"
+        },
+        "main_wifi_keyword" : {
+            "type": "string"
+        },
+        "password-characters" : {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 16
+        },
+        "os": {
+            "type": "string",
+            "enum": ["windows", "linux"]
+        }
+    },
+    "required": ["theme", "language", "fontSize"],
+    "additionalProperties": false
+}

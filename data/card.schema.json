@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Card Schema",
+    "type": "object",
+    "properties": {
+        "QrWiFi" : {
+            "type": "object"
+        },
+        "primary-color": {
+            "type": "string",
+            "format": "color"
+        },
+        "secondary-color": {
+            "type": "string",
+            "format": "color"
+        },
+        "bottom-logo": {
+            "type": "string",
+            "format": "uri"
+        },
+        "font" : {
+            "type": "object",
+            "properties": {
+                "family": {
+                    "type": "string"
+                },
+                "size": {
+                    "type": "integer",
+                    "minimum": 8,
+                    "maximum": 32
+                }
+            },
+            "required": ["family", "size"],
+            "additionalProperties": false
+        }
+    },
+    "required": ["ssid", "password"],
+    "additionalProperties": false
+}

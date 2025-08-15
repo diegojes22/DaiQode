@@ -24,7 +24,7 @@ def gen_random_wifi(wifis: list[str], passwords: list[str], main_keyword: str = 
     passwords.append(password)
 
 # generate list
-for i in range(10):
+for i in range(30):
     gen_random_wifi(wifiSSID, wifiPassword, main_wifi_keyword)
 
 for ssid, password in zip(wifiSSID, wifiPassword):
@@ -32,16 +32,17 @@ for ssid, password in zip(wifiSSID, wifiPassword):
 
 # gen qr
 print("\nGenerating random WiFi QR codes...")
-path :str = pathAdmin.getProjectPath()
+path :str = pathAdmin.get_script_path()
 
 for ssid, password in zip(wifiSSID, wifiPassword):
     qr_wifi : QrWiFi = QrWiFi(ssid, password)
     qr_wifi.set_icon(myvars.my_wifi_icon)
 
     img = qr_wifi.get_qr_code()
-    img.save(f"{path}/qr/{ssid}.png")
 
     card : WiFiCard = WiFiCard(qr_wifi)
     card.set_bottom_logo(myvars.my_logo)
     card.set_font(myvars.my_font)
     card.draw().save(f"{path}/out/{ssid}.png")
+
+    
